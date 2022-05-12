@@ -79,10 +79,18 @@ WSGI_APPLICATION = 'my_delivery_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project1',
+        'USER': 'yesolll',
+        'PASSWORD': 'ehdrhwlq124',
+        'HOST': 'database-2.c6qbkohjr6kb.ap-northeast-2.rds.amazonaws.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
+
 
 
 # Password validation
