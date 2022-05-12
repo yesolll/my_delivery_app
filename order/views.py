@@ -12,11 +12,11 @@ def shops(request):
         # shops = Shop.objects.all()
         # serializer = ShopSerializer(shops, many=True)
         # return JsonResponse(serializer.data, safe=False)
-        if User.objects.all().get(id=request.session['user_sq']).user_type==0:
+        # if User.objects.all().get(id=request.session['user_sq']).user_type==0:
             shops = Shop.objects.all()
             return render(request, 'order/shops.html', {'shops': shops})
-        else:
-            return render(request, 'order/fail.html')
+        # else:
+        #     return render(request, 'order/fail.html')
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)
