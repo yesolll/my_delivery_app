@@ -14,7 +14,7 @@ class Order(models.Model):
     order_date = models.DateTimeField('date ordered')
     estimated_time = models.IntegerField(default = -1)
     delivery_address = models.CharField(max_length=100)
-    deliver_finish = models.BooleanField(default = 0)
+    delivery_finish = models.BooleanField(default = 0)
 
 class OrderMenu(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)

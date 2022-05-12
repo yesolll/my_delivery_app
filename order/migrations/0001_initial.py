@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
                 ('order_date', models.DateTimeField(verbose_name='date ordered')),
                 ('estimated_time', models.IntegerField(default=-1)),
                 ('delivery_address', models.CharField(max_length=100)),
-                ('deliver_finish', models.BooleanField(default=0)),
+                ('delivery_finish', models.BooleanField(default=0)),
             ],
         ),
         migrations.CreateModel(

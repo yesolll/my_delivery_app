@@ -19,12 +19,15 @@
             {% if order.estimated_time == -1 %}
                 미정
             {% else %}
-                {{order.estimated_time}}
+                {{order.estimated_time}}분
             {% endif %}
         </td>
         <td style="border: 1px solid black;">
             {% if order.delivery_finish == 0 %}
-                배송중
+                <form method="post" action="/delivery/orders/">
+                    <input type="hidden" name="order_id" value="{{order.id}}"/>
+                    <input type="submit" value="배달완료"/>
+                </form>
             {% else %}
                 완료
             {% endif %}
