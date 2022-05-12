@@ -13,8 +13,12 @@
         {%endfor%}
     </ol>
     <ol>
-        <h4> 2.주소를 입력해주세요. </h4>
+        <h4> 2. 주소를 입력해주세요. </h4>
         <input type="text" name="address" required>
+    </ol>
+    <ol>
+        <h4> 3. 요청 메세지를 입력해주세요. </h4>
+        <input type="text" name="msg">
     </ol>
     <input type="hidden" name="shop_id" value="{{shop.id}}" />
     <input type="submit" value="주문하기" />

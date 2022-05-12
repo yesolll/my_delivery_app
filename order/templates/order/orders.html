@@ -2,8 +2,9 @@
     <tr style="border: 1px solid black;">
         <th style="border: 1px solid black;">주문 시간</th>
         <th style="border: 1px solid black;">음식</th>
-        <th style="border: 1px solid black;">배달 예상 시간</th>
+        <th style="border: 1px solid black;">예상 소요 시간</th>
         <th style="border: 1px solid black;">배달 완료 여부</th>
+        <th style="border: 1px solid black;">요청 메세지</th>
     </tr>
     {% for order in orders %}
     <tr style="border: 1px solid black;">
@@ -19,7 +20,7 @@
             {% if order.estimated_time == -1 %}
                 미정
             {% else %}
-                {{order.estimated_time}}
+                {{order.estimated_time}}분
             {% endif %}
         </td>
         <td style="border: 1px solid black;">
@@ -28,6 +29,9 @@
             {% else %}
                 완료
             {% endif %}
+        </td>
+        <td style="border: 1px solid black;">
+            {{order.delivery_msg}}
         </td>
     </tr>
     {% endfor %}

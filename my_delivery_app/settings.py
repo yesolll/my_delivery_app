@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ygms)d-6@j37um6z*9_xd$sjb)&bdw9wjt+6+7u-!o8y@^)ze5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-13-125-117-172.ap-northeast-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-13-125-117-172.ap-northeast-2.compute.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
@@ -133,3 +133,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LANGUAGE_CODE = 'ko-kr'
+TIME_ZONE = 'Asia/Seoul'

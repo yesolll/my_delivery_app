@@ -44,12 +44,13 @@ def order(request):
     if request.method == 'POST':
         shop_id = request.POST['shop_id']
         delivery_address = request.POST['address']
+        delivery_msg = request.POST['msg']
         order_date = timezone.now()
         order_menu_names = request.POST.getlist('menu')
 
         shop = Shop.objects.get(pk=int(shop_id))
 
-        shop.order_set.create(shop=int(shop_id), order_date=order_date, delivery_address=delivery_address)
+        shop.order_set.create(shop=int(shop_id), order_date=order_date, delivery_address=delivery_address, delivery_msg=delivery_msg)
 
         order = Order.objects.get(pk=shop.order_set.latest('id').id)
         

@@ -14,6 +14,7 @@ class Order(models.Model):
     order_date = models.DateTimeField('date ordered')
     estimated_time = models.IntegerField(default = -1)
     delivery_address = models.CharField(max_length=100)
+    delivery_msg = models.CharField(max_length=100, null=True, default='')
     delivery_finish = models.BooleanField(default = 0)
 
 class OrderMenu(models.Model):
