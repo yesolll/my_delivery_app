@@ -2,7 +2,8 @@
     <tr style="border: 1px solid black;">
         <th style="border: 1px solid black;">주문 시간</th>
         <th style="border: 1px solid black;">음식</th>
-        <th style="border: 1px solid black;">예상 소요 시간</th>
+        <th style="border: 1px solid black;">주소</th>
+        <th style="border: 1px solid black;">예상 소요시간</th>
         <th style="border: 1px solid black;">배달 완료 여부</th>
         <th style="border: 1px solid black;">요청 메세지</th>
     </tr>
@@ -15,6 +16,9 @@
             {% for ordermenu in order.ordermenu_set.all %}
                 <h5> {{ordermenu.order_menu_name}}</h5>
             {% endfor %}
+        </td>
+        <td style="border: 1px solid black;">
+            {{ order.delivery_address }}
         </td>
         <td style="border: 1px solid black;">
             {% if order.estimated_time == -1 %}
