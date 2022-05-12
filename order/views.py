@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from order.models import Shop, Menu, Order, OrderMenu
+from user.models import User
 from order.serializers import ShopSerializer, MenuSerializer
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
@@ -11,9 +12,11 @@ def shops(request):
         # shops = Shop.objects.all()
         # serializer = ShopSerializer(shops, many=True)
         # return JsonResponse(serializer.data, safe=False)
-        
-        shops = Shop.objects.all()
-        return render(request, 'order/shops.html', {'shops': shops})
+        if User.objects.all().get(id=request.session['user_sq']).user_type==0:
+            shops = Shop.objects.all()
+            return render(request, 'order/shops.html', {'shops': shops})
+        else:
+            return render(request, 'order/fail.html')
 
     elif request.method == 'POST':
         data = JSONParser().parse(request)

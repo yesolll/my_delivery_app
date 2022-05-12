@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'order',
     'owner',
     'delivery',
+    'user',
     'rest_framework',
 ]
 

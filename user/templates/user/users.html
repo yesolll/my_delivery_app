@@ -1,0 +1,13 @@
+{% for user in users %}
+    <!-- <h5>
+        <a href="/user/users/{{user.id}}">
+            {{ user.user_name }}
+        </a>
+    </h5> -->
+    <h5>
+        이름: {{ user.user_name }}
+    </h5>
+    <h5>
+        등급: {{ user.user_type }}
+    </h5>
+{%endfor%}
